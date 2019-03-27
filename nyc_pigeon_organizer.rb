@@ -26,8 +26,12 @@ def nyc_pigeon_organizer(data)
     gen_data.each do |description, names|
       names.each do |pigeon_name|
         pigeon_list[pigeon_name] ||= {}
+        #sets first level to Theo => {}
         pigeon_list[pigeon_name][gen_info] ||= []
+        #sets second level to Theo => {:color => []}
         pigeon_list[pigeon_name][gen_info] << description.to_s
+        #sets third level to Theo => {:color => ["purple", "grey"]}
+        #originally, colors were :symbols. needed to convert to strings.
       end
     end
   end
